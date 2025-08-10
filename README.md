@@ -22,21 +22,41 @@ gci 'C:\Users\*\AppData\Local\Google\Chrome\User Data\*\History' | select FullNa
 find /Users/*/Library/"Application Support"/Google/Chrome/* -name "History" -type f -exec stat -f "%Sm %N" -t "%Y-%m-%d %H:%M:%S" {} + | sort
 ```
 
-## Web Servers Logs Location
-### Windows Web Server Logs Location:
+## Web Service Logs Location
+### Windows Web Service Logs Location:
 ```
 # Apache HTTP Server:
 C:\Program Files\Apache Group\Apache2\logs\
 C:\Apache24\logs\
 
-#Nginx:
+# Nginx:
 <nginx_install_dir>\logs\
 
-#Microsoft IIS:
+# Microsoft IIS:
 %SystemDrive%\inetpub\logs\LogFiles\
 
-#Tomcat:
+# Tomcat:
 C:\tomcat\logs\
 ```
 
+### Linux Web Service Logs Location:
+```
+# Apache HTTP Server
+/var/log/apache2/
+/var/log/httpd/
+/var/log/apache2/access.log
+/var/log/apache2/error.log
+
+# Nginx
+/var/log/nginx/access.log
+/var/log/nginx/error.log
+
+#Tomcat
+/opt/tomcat/logs/
+```
+
+## System Logs Location
+```
+C:\Windows\System32\winevt\Logs
+```
 
