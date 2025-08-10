@@ -57,9 +57,10 @@ C:\tomcat\logs\
 
 ## System Logs Location
 ```
-Windows:
+#Windows:
 C:\Windows\System32\winevt\Logs
-Mac\Linux:
+
+#Mac\Linux:
 /var/log/
 ```
 
