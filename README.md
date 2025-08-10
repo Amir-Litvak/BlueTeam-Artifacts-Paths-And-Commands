@@ -40,4 +40,3 @@ C:\tomcat\logs\
 ```
 
 
-דוגמה: C:\inetpub\logs\LogFiles\W3SVC1
