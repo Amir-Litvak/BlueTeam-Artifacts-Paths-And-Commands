@@ -64,3 +64,16 @@ C:\Windows\System32\winevt\Logs
 /var/log/
 ```
 
+## Windows Commands:
+```
+Process List:	wmic.exe process get /format:csv
+Services:	wmic.exe service get /format:csv
+ActiveNetConnections:	netstat.exe -abno
+ScheduledTasks:	schtasks.exe /query /v /fo CSV
+Wmic Installed Programs: wmic.exe product get Caption,Description,IdentifyingNumber,InstallDate,InstallDate2,InstallLocation,InstallSource,InstallState,Language,LocalPackage,Name,PackageCache,PackageCode,PackageName,ProductID,Vendor,Version /format:csv
+Node Installed Programs:	reg.exe QUERY "HKLM\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall" /s
+Installed Programs:	reg.exe QUERY "HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall" /s
+LocalGroups: cmd.exe /C "for /f "delims=*" %x in ('net localgroup ^|find "*"') do net localgroup "%x""
+```
+
+
