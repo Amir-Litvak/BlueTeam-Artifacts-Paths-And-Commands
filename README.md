@@ -156,54 +156,92 @@ C:\Windows\System32\LogFiles\Firewall\pfirewall.log
   Service and driver activity (Application and System Logs)
 ```
 
-## Windows Commands:
+# Windows Commands:
+### Process List:
 ```
-Process List:
-  wmic.exe process get /format:csv
-Services:
-  wmic.exe service get /format:csv
-ActiveNetConnections:
-  netstat.exe -abno
-List Shared Resources:
-  net view \\<computer_name>
-List all shared folders:
-  Get-SmbShare
-List Stored Wi-Fi Profiles:
-  netsh wlan show profiles
-Collect System Information:
-  systeminfo > "%OutputDir%\SystemInfo.txt"
-View Current Firewall Logging Settings:
-  netsh advfirewall show allprofiles
-Export Wi-Fi Profiles for Forensic Analysis:
-  netsh wlan export profile folder=C:\WiFi-Backup key=clear
-Extract User Accounts:
-  net user > "%OutputDir%\Users.txt"
-Netword Configuration Details:
-  ipconfig /all > "%OutputDir%\NetworkConfig.txt"
-Extract Active DNS Cache:
-  ipconfig /displaydns > "%OutputDir%\DNSCache.txt"
-ScheduledTasks:
-  schtasks.exe /query /v /fo CSV
-Extract Running Services:
-  sc query > "%OutputDir%\Services.txt"
-List Running Processes:
-  tasklist /FI "USERNAME eq NT AUTHORITY\SYSTEM" > "%OutputDir%\RunningProcesses.txt"
-Wmic Installed Programs:
-  wmic.exe product get Caption,Description,IdentifyingNumber,InstallDate,InstallDate2,InstallLocation,InstallSource,InstallState,Language,LocalPackage,Name,PackageCache,PackageCode,PackageName,ProductID,Vendor,Version /format:csv
-Node Installed Programs:
-  reg.exe QUERY "HKLM\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall" /s
-Installed Programs:
-  reg.exe QUERY "HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall" /s
-LocalGroups:
-  cmd.exe /C "for /f "delims=*" %x in ('net localgroup ^|find "*"') do net localgroup "%x""
-Extract Windows Event Logs:
-  wevtutil epl System "%OutputDir%\SystemLog.evtx"
-  wevtutil epl Security "%OutputDir%\SecurityLog.evtx"
-  wevtutil epl Application "%OutputDir%\ApplicationLog.evtx"
-Extract Registry Hives:
-  REG EXPORT HKLM\Software "%OutputDir%\HKLM_Software.reg" /y
-  REG EXPORT HKLM\SYSTEM "%OutputDir%\HKLM_System.reg" /y
-  REG EXPORT HKLM\SAM "%OutputDir%\HKLM_SAM.reg" /y
-
+wmic.exe process get /format:csv
 ```
-
+### Services:
+```
+wmic.exe service get /format:csv
+```
+### Active Network Connections:
+```
+netstat.exe -abno
+```
+### List Shared Resources:
+```
+net view \\<computer_name>
+```
+### List All Shared Folders:
+```
+Get-SmbShare
+```
+### List Stored Wi-Fi Profiles:
+```
+netsh wlan show profiles
+```
+### Collect System Information:
+```
+systeminfo > "%OutputDir%\SystemInfo.txt"
+```
+### View Current Firewall Logging Settings:
+```
+netsh advfirewall show allprofiles
+```
+### Export Wi-Fi Profiles for Forensic Analysis:
+```
+netsh wlan export profile folder=C:\WiFi-Backup key=clear
+```
+### Extract User Accounts:
+```
+net user > "%OutputDir%\Users.txt"
+```
+### Network Configuration Details:
+```
+ipconfig /all > "%OutputDir%\NetworkConfig.txt"
+```
+### Extract Active DNS Cache:
+```
+ipconfig /displaydns > "%OutputDir%\DNSCache.txt"
+```
+### Scheduled Tasks:
+```
+schtasks.exe /query /v /fo CSV
+```
+### Extract Running Services:
+```
+sc query > "%OutputDir%\Services.txt"
+```
+### List Running Processes:
+```
+tasklist /FI "USERNAME eq NT AUTHORITY\SYSTEM" > "%OutputDir%\RunningProcesses.txt"
+```
+### WMIC Installed Programs:
+```
+wmic.exe product get Caption,Description,IdentifyingNumber,InstallDate,InstallDate2,InstallLocation,InstallSource,InstallState,Language,LocalPackage,Name,PackageCache,PackageCode,PackageName,ProductID,Vendor,Version /format:csv
+```
+### Node Installed Programs:
+```
+reg.exe QUERY "HKLM\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall" /s
+```
+### Installed Programs:
+```
+reg.exe QUERY "HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall" /s
+```
+### Local Groups:
+```
+cmd.exe /C "for /f "delims=*" %x in ('net localgroup ^|find "*"') do net localgroup "%x""
+```
+### Extract Windows Event Logs:
+```
+wevtutil epl System "%OutputDir%\SystemLog.evtx"
+wevtutil epl Security "%OutputDir%\SecurityLog.evtx"
+wevtutil epl Application "%OutputDir%\ApplicationLog.evtx"
+```
+### Extract Registry Hives:
+```
+REG EXPORT HKLM\Software "%OutputDir%\HKLM_Software.reg" /y
+REG EXPORT HKLM\SYSTEM "%OutputDir%\HKLM_System.reg" /y
+REG EXPORT HKLM\SAM "%OutputDir%\HKLM_SAM.reg"
+```
