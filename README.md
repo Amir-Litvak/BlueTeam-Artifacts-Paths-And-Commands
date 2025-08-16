@@ -1,5 +1,4 @@
-# Paths And Commands For Forensics
-# (And some other useful information)
+# Paths And Commands For Forensics (And some other useful information)
 ## Browsers
 ### History File Location:
 ```
@@ -53,6 +52,7 @@ gci 'C:\Users\*\AppData\Local\Google\Chrome\User Data\*\History' | select FullNa
 find /Users/*/Library/"Application Support"/Google/Chrome/* -name "History" -type f -exec stat -f "%Sm %N" -t "%Y-%m-%d %H:%M:%S" {} + | sort
 ```
 
+
 ## Web Service Logs Location
 ### Windows Web Service Logs Location:
 ```
@@ -86,6 +86,7 @@ C:\tomcat\logs\
 /opt/tomcat/logs/
 ```
 
+
 ## System
 ### System Logs Location
 ```
@@ -117,7 +118,7 @@ C:\Windows\Prefetch\
 C:\Windows\Prefetch\
 ```
 
-## Registry Analysis
+### Registry Analysis
 ```
 #System-wide registry hives - HKEY_LOCAL_MACHINE (HKLM):
   C:\Windows\System32\Config\SAM
@@ -145,16 +146,14 @@ C:\Windows\System32\LogFiles\Firewall\pfirewall.log
 
 ### Event Log IDs
 ```
-#Windows Event Logs provide a chronological record of system and security events. They are essential
-for tracking:
-
-User logins and authentication attempts (Security Log - Event ID 4624 & 4625).
-Failed login attempts and account lockouts (Event ID 4740).
-Process creation and software execution (Event ID 4688).
-User Account Created (Event ID 4720).
-USB Device Plugged In (Event ID 2003).
-System startup, shutdown, and crashes (System Log).
-Service and driver activity (Application and System Logs)
+#Windows Event Logs provide a chronological record of system and security events. They are essential for tracking:
+  User logins and authentication attempts (Security Log - Event ID 4624 & 4625).
+  Failed login attempts and account lockouts (Event ID 4740).
+  Process creation and software execution (Event ID 4688).
+  User Account Created (Event ID 4720).
+  USB Device Plugged In (Event ID 2003).
+  System startup, shutdown, and crashes (System Log).
+  Service and driver activity (Application and System Logs)
 ```
 
 ## Windows Commands:
