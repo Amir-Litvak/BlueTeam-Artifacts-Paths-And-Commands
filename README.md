@@ -1,4 +1,4 @@
-# Paths And Commands For Forensics (And some other useful information)
+# Artifacts, Paths And Commands For Forensics (And some other useful information)
 ## Browsers
 ### History File Location:
 ```
